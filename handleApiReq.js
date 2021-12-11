@@ -7,8 +7,8 @@ console.log(count)
 if(count<=20){
     
     console.log('listening here...')
-    axios.get('https://api.github.com/users').then((data)=>{
-        res.send({'count':count,'data':data.data})
+    axios.get('https://restcountries.com/v3.1/region/europe').then((data)=>{
+        res.send('HI'+{'count':count,'data':data.data})
     }).catch((err)=>{
         console.log("There is an error..."+err)
     })
@@ -17,8 +17,8 @@ else if(count>20&&count<40){
     setTimeout(20000,()=>{
         res.setHeader('content-type', 'text/json');
         console.log('listening here...')
-        axios.get('https://api.github.com/users').then((data)=>{
-            res.send(data.data)
+        axios.get('https://restcountries.com/v3.1/region/europe').then((data)=>{
+            res.send('Hi'+data.data)
         }).catch((err)=>{
             console.log("There is an error..."+err)
         })
